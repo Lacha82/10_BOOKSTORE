@@ -5,16 +5,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bookstore</title>
+    <link rel="icon" type="image/png" href="./img/heart-filled.png">
 
     <link rel="stylesheet" href="./style.css">
 
-    <!-- zuerst db.js (die Bücher), danach script.js (der Code, der die Bücher benutzt) -->
+    <!-- Reihenfolge: zuerst die Bücher (db.js), dann die Templates, dann der Code -->
     <script src="./db.js"></script>
+    <script src="./scripts/templates.js"></script>
     <script src="./script.js"></script>
 </head>
 
 <body onload="init()">
+    <header class="header">
+        <h1>Bookstore</h1>
+        <p>Finde dein nächstes Buch</p>
+    </header>
 
+    <main class="main">
+        <section id="book_list" class="book-list"></section>
+    </main>
+
+    <footer class="footer">
+        <p>Icons von <a href="https://icons8.com" target="_blank">Icons8</a></p>
+    </footer>
 </body>
 
 </html>
