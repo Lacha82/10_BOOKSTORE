@@ -6,12 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bookstore</title>
     <link rel="icon" type="image/png" href="./img/heart-filled.png">
-
-    <!-- Bootstrap 5.3.8 (per npm, wie in der QuizApp) – zuerst laden, eigenes CSS danach -->
     <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="./style.css">
-
-    <!-- Reihenfolge: zuerst die Bücher (db.js), dann die Templates, dann der Code -->
     <script src="./db.js"></script>
     <script src="./scripts/templates.js"></script>
     <script src="./script.js"></script>
@@ -24,7 +20,7 @@
     </header>
 
     <main class="main container">
-        <section id="book_list" class="book-list row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4"></section>
+        <section id="book_list" class="book-list"></section>
     </main>
 
     <footer class="footer text-center">

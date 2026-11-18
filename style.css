@@ -3,7 +3,6 @@ body {
 }
 
 
-/* Kopf- und Fußzeile */
 .header {
     background-color: #16323d;
     color: #ffffff;
@@ -25,13 +24,31 @@ body {
 }
 
 
-/* Buch-Karte */
+.book-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.book-card {
+    width: calc(33.33% - 16px);
+}
+
 .book-card .card-title {
     font-size: 22px;
 }
 
-.book-card .card-subtitle {
+.author {
     color: #6c757d;
+}
+
+.genre {
+    background-color: #6c757d;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 6px;
 }
 
 .book-info {
@@ -59,17 +76,43 @@ body {
 }
 
 
-/* Kommentare: bei vielen Kommentaren scrollen statt die Karte lang zu machen */
 .comments {
-    max-height: 200px;
-    overflow-y: auto;
+    border-top: 1px solid #dee2e6;
+    margin: 0;
+    padding: 16px 16px 16px 40px;
 }
 
 .no-comments {
     color: #6c757d;
-    font-style: italic;
+}
+
+.comment-form {
+    display: flex;
+    gap: 8px;
+    border-top: 1px solid #dee2e6;
+    padding: 16px;
+}
+
+.comment-input {
+    width: 100%;
+    padding: 6px 12px;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
 }
 
 .btn {
     cursor: pointer;
+}
+
+
+@media screen and (max-width: 991px) {
+    .book-card {
+        width: calc(50% - 12px);
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .book-card {
+        width: 100%;
+    }
 }
