@@ -2,6 +2,7 @@
 function getBookTemplate(indexBook, commentsHtml, heartImg) {
     return `
         <article class="card book-card">
+            <img src="${books[indexBook]["image"]}" class="card-img-top book-img" alt="Titelbild von ${books[indexBook]["name"]}">
             <div class="card-body">
                 <h2 class="card-title">${books[indexBook]["name"]}</h2>
                 <p class="author">${books[indexBook]["author"]}</p>

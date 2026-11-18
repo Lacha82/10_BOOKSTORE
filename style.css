@@ -34,6 +34,11 @@ body {
     width: calc(33.33% - 16px);
 }
 
+.book-img {
+    height: 200px;
+    object-fit: cover;
+}
+
 .book-card .card-title {
     font-size: 22px;
 }

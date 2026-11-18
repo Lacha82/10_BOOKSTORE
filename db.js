@@ -9,6 +9,7 @@ let books = [
         "price": 19.99,
         "publishedYear": 2018,
         "genre": "Fantasy",
+        "image": "./img/books/fluestern-der-wellen.png",
         "comments": [
             {
                 "name": "Peter 1",
@@ -24,6 +25,7 @@ let books = [
         "price": 14.99,
         "publishedYear": 2020,
         "genre": "Krimi",
+        "image": "./img/books/spur-im-schnee.png",
         "comments": [
             {
                 "name": "Peter 2",
@@ -39,6 +41,7 @@ let books = [
         "price": 12.99,
         "publishedYear": 2021,
         "genre": "Roman",
+        "image": "./img/books/sterne-ueber-der-stadt.png",
         "comments": [
             {
                 "name": "Peter 3",
@@ -54,6 +57,7 @@ let books = [
         "price": 24.99,
         "publishedYear": 2023,
         "genre": "Sachbuch",
+        "image": "./img/books/code-der-zukunft.png",
         "comments": [
             {
                 "name": "Peter 4",
@@ -69,6 +73,7 @@ let books = [
         "price": 9.99,
         "publishedYear": 2022,
         "genre": "Kinderbuch",
+        "image": "./img/books/kleiner-leuchtturm.png",
         "comments": [
             {
                 "name": "Peter 5",
