@@ -7,6 +7,8 @@
     <title>Bookstore</title>
     <link rel="icon" type="image/png" href="./img/heart-filled.png">
 
+    <!-- Bootstrap 5.3.8 (per npm, wie in der QuizApp) – zuerst laden, eigenes CSS danach -->
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="./style.css">
 
     <!-- Reihenfolge: zuerst die Bücher (db.js), dann die Templates, dann der Code -->
@@ -16,16 +18,16 @@
 </head>
 
 <body onload="init()">
-    <header class="header">
+    <header class="header text-center">
         <h1>Bookstore</h1>
         <p>Finde dein nächstes Buch</p>
     </header>
 
-    <main class="main">
-        <section id="book_list" class="book-list"></section>
+    <main class="main container">
+        <section id="book_list" class="book-list row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4"></section>
     </main>
 
-    <footer class="footer">
+    <footer class="footer text-center">
         <p>Icons von <a href="https://icons8.com" target="_blank">Icons8</a></p>
     </footer>
 </body>
