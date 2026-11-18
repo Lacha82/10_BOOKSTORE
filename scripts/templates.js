@@ -5,7 +5,7 @@ function getBookTemplate(indexBook, bookInfoHtml, commentsHtml) {
         <article class="card book-card">
             <img src="${books[indexBook]["image"]}" class="card-img-top book-img" alt="Titelbild von ${books[indexBook]["name"]}">
             ${bookInfoHtml}
-            <ul class="comments">${commentsHtml}</ul>
+            <ul class="comments overflow-y-auto">${commentsHtml}</ul>
             <div class="comment-form">
                 <input id="comment_input_${indexBook}" class="comment-input" placeholder="Schreibe dein Kommentar …">
                 <button class="btn btn-primary" onclick="addComment(${indexBook})">Senden</button>

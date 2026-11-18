@@ -86,7 +86,6 @@ body {
     margin: 0;
     padding: 16px 16px 16px 40px;
     max-height: 150px;
-    overflow-y: auto;
 }
 
 .no-comments {
