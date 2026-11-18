@@ -1,1 +1,75 @@
-/* Eigenes Design – laut Video "es muss nicht genau so aussehen" */
+body {
+    background-color: #f4f1ea;
+}
+
+
+/* Kopf- und Fußzeile */
+.header {
+    background-color: #16323d;
+    color: #ffffff;
+    padding: 24px 16px;
+    margin-bottom: 24px;
+}
+
+.header h1 {
+    margin: 0;
+}
+
+.header p {
+    margin: 4px 0 0;
+}
+
+.footer {
+    padding: 24px 16px;
+    margin-top: 24px;
+}
+
+
+/* Buch-Karte */
+.book-card .card-title {
+    font-size: 22px;
+}
+
+.book-card .card-subtitle {
+    color: #6c757d;
+}
+
+.book-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price {
+    color: #e53935;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.likes {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: bold;
+}
+
+.heart {
+    width: 28px;
+    cursor: pointer;
+}
+
+
+/* Kommentare: bei vielen Kommentaren scrollen statt die Karte lang zu machen */
+.comments {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.no-comments {
+    color: #6c757d;
+    font-style: italic;
+}
+
+.btn {
+    cursor: pointer;
+}
