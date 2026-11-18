@@ -33,3 +33,16 @@ function getCommentsHtml(indexBook) {
 
     return commentsHtml;
 }
+
+
+// Like an/aus: wird beim Klick aufs Herz aufgerufen (onclick="toggleLike(${indexBook})" im Template)
+function toggleLike(indexBook) {
+    if (books[indexBook]["liked"]) {                // schon geliked?
+        books[indexBook]["likes"]--;                //    1 Like weniger
+        books[indexBook]["liked"] = false;          //    Herz wird leer
+    } else {                                        // noch nicht geliked
+        books[indexBook]["likes"]++;                //    1 Like mehr
+        books[indexBook]["liked"] = true;           //    Herz wird voll
+    }
+    render();                                       // neu zeichnen: Zahl und Herz passen sich an
+}
