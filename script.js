@@ -46,3 +46,17 @@ function toggleLike(indexBook) {
     }
     render();                                       // neu zeichnen: Zahl und Herz passen sich an
 }
+
+
+// Kommentar hinzufügen: wird beim Klick auf „Senden“ aufgerufen (onclick="addComment(${indexBook})" im Template)
+function addComment(indexBook) {
+    let inputRef = document.getElementById('comment_input_' + indexBook);   // Eingabefeld von DIESEM Buch holen
+    let commentText = inputRef.value.trim();                                // Text lesen, Leerzeichen vorne/hinten weg
+
+    if (commentText == "") {                        // leeres Feld?
+        return;                                     //    dann nichts tun
+    }
+
+    books[indexBook]["comments"].unshift({ "name": "Peter", "comment": commentText });   // neuer Kommentar ganz oben
+    render();                                       // neu zeichnen: Kommentar erscheint, Feld ist wieder leer
+}
