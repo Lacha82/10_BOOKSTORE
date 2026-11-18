@@ -13,7 +13,8 @@ function render() {
     for (let indexBook = 0; indexBook < books.length; indexBook++) {   // 3. für jedes Buch
         let commentsHtml = getCommentsHtml(indexBook);                 //    Kommentare bauen (2. Schleife)
         let heartImg = books[indexBook]["liked"] ? "./img/heart-filled.png" : "./img/heart-empty.png";   // volles oder leeres Herz
-        bookListRef.innerHTML += getBookTemplate(indexBook, commentsHtml, heartImg);                    // 4. Karte anhängen
+        let bookInfoHtml = getBookInfoTemplate(indexBook, heartImg);                                    //    Info-Teil bauen (Titel, Preis, Herz)
+        bookListRef.innerHTML += getBookTemplate(indexBook, bookInfoHtml, commentsHtml);                // 4. Karte anhängen
     }
 }
 
