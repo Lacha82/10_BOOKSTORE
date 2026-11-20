@@ -111,6 +111,23 @@ body {
 }
 
 
+@media screen and (max-width: 1199px) {
+    .comment-form {
+        gap: 6px;
+        padding: 12px;
+    }
+
+    .comment-input {
+        padding: 6px 8px;
+        font-size: 14px;
+    }
+
+    .comment-form .btn {
+        padding: 6px 10px;
+        font-size: 14px;
+    }
+}
+
 @media screen and (max-width: 991px) {
     .book-card {
         width: calc(50% - 12px);
@@ -120,5 +137,13 @@ body {
 @media screen and (max-width: 767px) {
     .book-card {
         width: 100%;
+    }
+
+    .comment-input {
+        font-size: clamp(13px, 4vw, 14px);
+    }
+
+    .comment-form .btn {
+        font-size: clamp(13px, 4vw, 14px);
     }
 }
