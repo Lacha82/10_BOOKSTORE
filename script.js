@@ -5,17 +5,38 @@ function init() {                                               // wird beim Lad
 }
 
 
-// 1. Schleife: alle Bücher als Karten anzeigen
+// 1. Schleife: alle Bücher als Karten anzeigen (nur EINMAL beim Start)
 function render() {
     let bookListRef = document.getElementById('book_list');    // 1. leere Box holen
     bookListRef.innerHTML = "";                                 // 2. leeren
 
     for (let indexBook = 0; indexBook < books.length; indexBook++) {   // 3. für jedes Buch
         let commentsHtml = getCommentsHtml(indexBook);                 //    Kommentare bauen (2. Schleife)
-        let heartImg = books[indexBook]["liked"] ? "./img/heart-filled.png" : "./img/heart-empty.png";   // volles oder leeres Herz
-        let bookInfoHtml = getBookInfoTemplate(indexBook, heartImg);                                    //    Info-Teil bauen (Titel, Preis, Herz)
-        bookListRef.innerHTML += getBookTemplate(indexBook, bookInfoHtml, commentsHtml);                // 4. Karte anhängen
+        let likesHtml = getLikesTemplate(indexBook, getHeartImg(indexBook));                    //    Likes mit Herz bauen
+        let bookInfoHtml = getBookInfoTemplate(indexBook, likesHtml);                           //    Info-Teil bauen (Titel, Preis, Likes)
+        bookListRef.innerHTML += getBookTemplate(indexBook, bookInfoHtml, commentsHtml);        // 4. Karte anhängen
     }
+}
+
+
+// volles oder leeres Herz – je nachdem, ob das Buch geliked ist
+function getHeartImg(indexBook) {
+    return books[indexBook]["liked"] ? "./img/heart-filled.png" : "./img/heart-empty.png";
+}
+
+
+// nur die Likes von EINEM Buch neu zeichnen – der Rest der Seite bleibt, wie er ist
+function renderLikes(indexBook) {
+    let likesRef = document.getElementById('likes_' + indexBook);
+    likesRef.innerHTML = getLikesTemplate(indexBook, getHeartImg(indexBook));
+}
+
+
+// nur die Kommentare von EINEM Buch neu zeichnen und das Eingabefeld leeren
+function renderComments(indexBook) {
+    let commentsRef = document.getElementById('comments_' + indexBook);
+    commentsRef.innerHTML = getCommentsHtml(indexBook);
+    document.getElementById('comment_input_' + indexBook).value = "";
 }
 
 
@@ -45,7 +66,7 @@ function toggleLike(indexBook) {
         books[indexBook]["likes"]++;                //    1 Like mehr
         books[indexBook]["liked"] = true;           //    Herz wird voll
     }
-    render();                                       // neu zeichnen: Zahl und Herz passen sich an
+    renderLikes(indexBook);                         // nur Zahl und Herz von diesem Buch neu zeichnen
 }
 
 
@@ -59,5 +80,5 @@ function addComment(indexBook) {
     }
 
     books[indexBook]["comments"].unshift({ "name": "Peter", "comment": commentText });   // neuer Kommentar ganz oben
-    render();                                       // neu zeichnen: Kommentar erscheint, Feld ist wieder leer
+    renderComments(indexBook);                      // nur die Kommentare von diesem Buch neu zeichnen, Feld leeren
 }
